@@ -32,7 +32,5 @@ jobs:
       run: |
         cd gradle-setup-frontend-plugin
         echo ../package.json > src/main/resources/react/package.json
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
         git commit -a -m "Update React package.json"
         git push https://wlindner:${{ secrets.FRONTEND_PLUGIN_TOKEN }}@github.com/wlindner/gradle-setup-frontend-plugin.git HEAD:react-dependencies-update
