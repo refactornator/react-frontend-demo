@@ -26,6 +26,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
+        path: gradle-setup-frontend-plugin
         repository: wlindner/gradle-setup-frontend-plugin
     - name: Commit package.json
       run: |
