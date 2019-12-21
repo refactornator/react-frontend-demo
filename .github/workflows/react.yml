@@ -24,7 +24,7 @@ jobs:
     - name: Run Frontend Tests
       run: ./gradlew npm_test
     - name: Checkout
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
       with:
         path: gradle-setup-frontend-plugin
         repository: wlindner/gradle-setup-frontend-plugin
@@ -35,6 +35,4 @@ jobs:
         git config --local user.email "wlindner522@gmail.com"
         git config --local user.name "William Lindner"
         git commit -a -m "Update React package.json"
-        remote_repo="https://wlindner:${{ secrets.FRONTEND_PLUGIN_TOKEN }}@github.com/wlindner/gradle-setup-frontend-plugin.git"
-        echo $remote_repo
-        git push "${remote_repo}" HEAD:react-dependencies-update
+        git push origin react-dependencies-update
