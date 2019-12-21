@@ -26,6 +26,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
+        persist-credentials: false
         path: gradle-setup-frontend-plugin
         repository: wlindner/gradle-setup-frontend-plugin
     - name: Commit package.json
@@ -36,7 +37,6 @@ jobs:
         echo ../package.json > src/main/resources/react/package.json
         git add src/main/resources/react/package.json
         git commit -m "Update React package.json"
-        git config credential.helper
         git push -u origin HEAD:react-dependencies-update
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
