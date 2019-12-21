@@ -32,8 +32,6 @@ jobs:
       run: |
         cd gradle-setup-frontend-plugin
         echo ../package.json > src/main/resources/react/package.json
-        git config --local user.email "wlindner522@gmail.com"
-        git config --local user.name "William Lindner"
         git commit -a -m "Update React package.json"
     - name: Push changes
       uses: ad-m/github-push-action@v0.5.0
