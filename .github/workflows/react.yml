@@ -35,4 +35,4 @@ jobs:
         git config --local user.email "wlindner522@gmail.com"
         git config --local user.name "William Lindner"
         git commit -a -m "Update React package.json"
-        git push origin react-dependencies-update
+        git push -u origin react-dependencies-update
