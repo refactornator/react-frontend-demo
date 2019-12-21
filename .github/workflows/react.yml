@@ -35,7 +35,5 @@ jobs:
         git config --local user.name "William Lindner"
         echo ../package.json > src/main/resources/react/package.json
         git add src/main/resources/react/package.json
-        git status
         git commit -m "Update React package.json"
-        git log
-        git push -u origin react-dependencies-update
+        git push -u origin HEAD:react-dependencies-update
