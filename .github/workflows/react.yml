@@ -31,8 +31,8 @@ jobs:
     - name: Commit package.json
       run: |
         cd gradle-setup-frontend-plugin
-        git config --local user.email "wlindner522@gmail.com"
-        git config --local user.name "William Lindner"
+        git config --global user.email "wlindner522@gmail.com"
+        git config --global user.name "William Lindner"
         echo ../package.json > src/main/resources/react/package.json
         git add src/main/resources/react/package.json
         git commit -m "Update React package.json"
