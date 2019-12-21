@@ -6,7 +6,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
       with:
@@ -37,6 +37,7 @@ jobs:
         git add src/main/resources/react/package.json
         git commit -m "Update React package.json"
         git config --list
+        git remote -v
         git push -u origin HEAD:react-dependencies-update
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
