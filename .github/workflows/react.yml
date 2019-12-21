@@ -36,7 +36,7 @@ jobs:
         echo ../package.json > src/main/resources/react/package.json
         git add src/main/resources/react/package.json
         git commit -m "Update React package.json"
-        git config --list | grep actions
-        git push -u "https://wlindner:$FRONTEND_PLUGIN_TOKEN@github.com/wlindner/gradle-setup-frontend-plugin.git" HEAD:react-dependencies-update
+        git config --list
+        git push -u origin HEAD:react-dependencies-update
       env:
-        FRONTEND_PLUGIN_TOKEN: ${{ secrets.FRONTEND_PLUGIN_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
