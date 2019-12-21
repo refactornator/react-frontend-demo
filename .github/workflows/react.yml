@@ -31,10 +31,12 @@ jobs:
     - name: Commit package.json
       run: |
         cd gradle-setup-frontend-plugin
-        git config --global user.email "wlindner522@gmail.com"
-        git config --global user.name "William Lindner"
+        git config --local user.email "wlindner522@gmail.com"
+        git config --local user.name "William Lindner"
         echo ../package.json > src/main/resources/react/package.json
         git add src/main/resources/react/package.json
         git commit -m "Update React package.json"
-        git config --local --list
-        git push -u "https://wlindner:${{secrets.FRONTEND_PLUGIN_TOKEN}}@github.com/wlindner/gradle-setup-frontend-plugin.git" HEAD:react-dependencies-update
+        git config --list | grep actions
+        git push -u "https://wlindner:$FRONTEND_PLUGIN_TOKEN@github.com/wlindner/gradle-setup-frontend-plugin.git" HEAD:react-dependencies-update
+      env:
+        FRONTEND_PLUGIN_TOKEN: ${{ secrets.FRONTEND_PLUGIN_TOKEN }}
