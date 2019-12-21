@@ -36,8 +36,7 @@ jobs:
         echo ../package.json > src/main/resources/react/package.json
         git add src/main/resources/react/package.json
         git commit -m "Update React package.json"
-        git config --list
-        git remote -v
+        git config credential.helper
         git push -u origin HEAD:react-dependencies-update
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
