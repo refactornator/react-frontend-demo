@@ -41,4 +41,4 @@ jobs:
         branch: react-dependencies-update
         directory: gradle-setup-frontend-plugin
         repository: wlindner/gradle-setup-frontend-plugin
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.FRONTEND_PLUGIN_TOKEN }}
