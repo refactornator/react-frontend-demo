@@ -39,7 +39,9 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@v0.5.0
       with:
-        branch: origin/react-dependencies-update
+        branch: react-dependencies-update
         directory: gradle-setup-frontend-plugin
         repository: wlindner/gradle-setup-frontend-plugin
         github_token: ${{ secrets.FRONTEND_PLUGIN_TOKEN }}
+      env:
+        GITHUB_ACTOR: wlindner
