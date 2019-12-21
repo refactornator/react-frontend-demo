@@ -35,4 +35,6 @@ jobs:
         git config --local user.email "wlindner522@gmail.com"
         git config --local user.name "William Lindner"
         git commit -a -m "Update React package.json"
-        git push https://wlindner:${{ secrets.FRONTEND_PLUGIN_TOKEN }}@github.com/wlindner/gradle-setup-frontend-plugin.git HEAD:react-dependencies-update
+        remote_repo="https://wlindner:${{ secrets.FRONTEND_PLUGIN_TOKEN }}@github.com/wlindner/gradle-setup-frontend-plugin.git"
+        echo $remote_repo
+        git push "${remote_repo}" HEAD:react-dependencies-update
