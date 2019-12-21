@@ -35,11 +35,4 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git commit -a -m "Update React package.json"
-        git status
-    - name: Push changes
-      uses: ad-m/github-push-action@v0.5.0
-      with:
-        branch: origin/react-dependencies-update
-        directory: gradle-setup-frontend-plugin
-        repository: wlindner/gradle-setup-frontend-plugin
-        github_token: ${{ secrets.FRONTEND_PLUGIN_TOKEN }}
+        git push https://wlindner:${{ secrets.FRONTEND_PLUGIN_TOKEN }}@github.com/wlindner/gradle-setup-frontend-plugin.git HEAD:react-dependencies-update
