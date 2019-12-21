@@ -3,7 +3,7 @@ name: React
 on: [push]
 
 jobs:
-  test:
+  update:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -11,9 +11,13 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: Set up Node.js
+      uses: actions/setup-node@v1.1.0
     - name: Get Latest Version Number of Gradle Plugin
       run: ./getLatestVersion.sh
     - name: Scaffold React Frontend
       run: ./gradlew setupReactFrontend
+    - name: Update package.json
+      run: npx npm-check-updates -u
     - name: Run Frontend Tests
       run: ./gradlew npm_test
